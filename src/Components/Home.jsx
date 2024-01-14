@@ -1,4 +1,4 @@
-import { Box, Heading, Image } from "@chakra-ui/react";
+import { Box, Container, Heading, Image, Stack, Text } from "@chakra-ui/react";
 
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -22,6 +22,18 @@ function Home() {
   return (
     <Box>
       <MyCarousel />
+      <Container maxW={'container.xl'} minH={'100vh'} >
+      <Heading textTransform={'uppercase'} py={'2'} w={'fit-content'} borderBottom={'2px solid black'} margin={'auto'}>
+        Services
+      </Heading>
+      <Stack h={'full'} p={'4'} alignItems={'center'} direction={['column','row']}>
+        <Image src={img5} h={['40','400']} filter={'hue-rotate(-130deg)'}/>
+        <Text letterSpacing={'widest'} lineHeight={'190%'} p={['4','16']} textAlign={'center'}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi rem esse temporibus in distinctio, quaerat incidunt quae, cumque, fugit neque eum laboriosam. Eum dolores quo perspiciatis quam dolorem odio. Ipsa dolores quibusdam, eius, autem rem culpa non impedit excepturi voluptatem nobis reiciendis voluptates voluptate iusto? Exercitationem ab minima tempore quis!
+        </Text>
+      </Stack>
+      </Container>
+
     </Box>
   );
 }
@@ -45,7 +57,7 @@ const MyCarousel = () => {
       <Box w={"full"} h={"100vh"}>
         <Image src={img2} h="full" w={'full'} objectFit={'cover'}/>
         <Heading bg={"blackAlpha.600"} color={"white"}{...headingOption}>
-          Watch The Future
+          Gaming is Cooling Things in the World
         </Heading>
       </Box>
       <Box w={"full"} h={"100vh"}>
@@ -57,15 +69,10 @@ const MyCarousel = () => {
       <Box w={"full"} h={"100vh"}>
         <Image src={img4} h="full" w={'full'} objectFit={'cover'} />
         <Heading bg={"blackAlpha.600"} color={"white"}{...headingOption}>
-          Watch The Future
+          Night life is Cool
         </Heading>
       </Box>
-      <Box w={"full"} h={"100vh"}>
-        <Image src={img5} h="full" w={'full'} objectFit={'cover'} />
-        <Heading bg={"blackAlpha.600"} color={"white"}{...headingOption}>
-          Watch The Future
-        </Heading>
-      </Box>
+      
     </Carousel>
   );
 };
